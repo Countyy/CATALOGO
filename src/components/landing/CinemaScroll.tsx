@@ -120,7 +120,7 @@ export function CinemaScroll() {
   const current = scenes[activeScene];
 
   return (
-    <section ref={sectionRef} className="relative" style={{ height: "300vh" }}>
+    <section ref={sectionRef} className="relative" style={{ height: `${scenes.length * 100}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-bg">
         <div className="absolute inset-0 grid-bg opacity-50" />
 
