@@ -9,29 +9,32 @@ export function SceneStage({ scenes, activeScene }: Props) {
   const current = scenes[activeScene];
 
   return (
-    <div className="relative z-10 max-w-[1400px] w-full mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+    <div className="relative z-10 max-w-[1400px] w-full mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
       {/* TEXT */}
-      <div key={activeScene} className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div
+        key={activeScene}
+        className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700 order-2 md:order-1 text-center md:text-left"
+      >
         <div
-          className="font-condensed font-bold tracking-[0.3em] text-sm uppercase"
+          className="font-condensed font-bold tracking-[0.25em] md:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase"
           style={{ color: current.kickerColor }}
         >
           ◆ {current.kicker}
         </div>
-        <h2 className="font-display text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85]">
+        <h2 className="font-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.85]">
           {current.title}
         </h2>
-        <p className="text-brand-muted text-lg max-w-xl leading-relaxed pt-2">
+        <p className="text-brand-muted text-sm sm:text-base md:text-lg max-w-xl mx-auto md:mx-0 leading-relaxed pt-1 md:pt-2">
           {current.text}
         </p>
-        {current.extra}
+        <div className="hidden md:block">{current.extra}</div>
       </div>
 
-      {/* AD FORMAT IMAGES (all preloaded, fade between) */}
-      <div className="hidden md:flex justify-center items-center relative h-[91vh]">
+      {/* AD FORMAT IMAGES */}
+      <div className="flex justify-center items-center relative h-[38vh] sm:h-[45vh] md:h-[91vh] order-1 md:order-2">
         <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[400px] h-[120px] rounded-full transition-all duration-700"
-          style={{ background: current.glow, filter: "blur(80px)" }}
+          className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 w-[260px] md:w-[400px] h-[80px] md:h-[120px] rounded-full transition-all duration-700"
+          style={{ background: current.glow, filter: "blur(60px)" }}
         />
         {scenes.map((s, i) => (
           <div
@@ -46,7 +49,7 @@ export function SceneStage({ scenes, activeScene }: Props) {
             <img
               src={s.image}
               alt={s.imageAlt}
-              className="max-h-[91vh] w-auto object-contain drop-shadow-2xl"
+              className="max-h-[38vh] sm:max-h-[45vh] md:max-h-[91vh] w-auto object-contain drop-shadow-2xl"
               loading="eager"
               decoding="async"
               fetchPriority={i === 0 ? "high" : "auto"}

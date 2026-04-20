@@ -33,12 +33,12 @@ export function CinemaScroll() {
           <SceneStage scenes={scenes} activeScene={activeScene} />
         </div>
 
-        {/* Scene dots */}
+        {/* Scene dots — right side on desktop, bottom-center on mobile */}
         <div
           role="tablist"
           aria-label="Selecionar formato de anúncio"
           aria-orientation="vertical"
-          className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20"
+          className="absolute z-20 flex gap-3 md:flex-col md:gap-3 bottom-6 md:bottom-auto left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 md:right-8 md:top-1/2 md:-translate-y-1/2"
         >
           {scenes.map((_, i) => {
             const isActive = i === activeScene;
