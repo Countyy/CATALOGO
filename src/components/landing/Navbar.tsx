@@ -5,15 +5,34 @@ export function Navbar() {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    const onScroll = () => {
+    let rafId = 0;
+    let ticking = false;
+    let lastOpacity = 1;
+
+    const compute = () => {
+      ticking = false;
       const y = window.scrollY;
       // Começa a esmaecer após 80px e some completamente em 360px
       const fade = Math.max(0, Math.min(1, 1 - (y - 80) / 280));
-      setOpacity(fade);
+      // Evita re-renders se a mudança for imperceptível
+      if (Math.abs(fade - lastOpacity) > 0.01 || fade === 0 || fade === 1) {
+        lastOpacity = fade;
+        setOpacity(fade);
+      }
     };
-    onScroll();
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      rafId = requestAnimationFrame(compute);
+    };
+
+    compute();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
