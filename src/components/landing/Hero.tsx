@@ -91,11 +91,11 @@ export function Hero() {
             QUE VENDE
           </h1>
 
-          <p className="reveal order-4 md:order-none text-brand-muted text-base md:text-lg max-w-xl leading-relaxed font-light" style={{ transitionDelay: "0.2s" }}>
+          <p className="reveal order-5 md:order-none text-brand-muted text-base md:text-lg max-w-xl leading-relaxed font-light" style={{ transitionDelay: "0.2s" }}>
             A Distribuidora São Roque conecta seus produtos a milhares de pontos de venda estratégicos. Garanta visibilidade máxima e destaque sua marca exatamente onde o varejista toma a decisão de abastecimento.
           </p>
 
-          <div className="reveal order-5 md:order-none hidden md:flex flex-wrap gap-4" style={{ transitionDelay: "0.3s" }}>
+          <div className="reveal order-6 md:order-none hidden md:flex flex-wrap gap-4" style={{ transitionDelay: "0.3s" }}>
             <a
               href="#pacotes"
               className="bg-brand-red text-white px-7 py-4 rounded font-bold tracking-wider text-sm hover:-translate-y-0.5 transition-transform"
@@ -110,7 +110,7 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="reveal order-6 md:order-none pt-2 md:pt-8 flex items-center gap-3 text-brand-muted text-xs font-condensed tracking-widest uppercase" style={{ transitionDelay: "0.5s" }}>
+          <div className="reveal order-7 md:order-none pt-2 md:pt-8 flex items-center gap-3 text-brand-muted text-xs font-condensed tracking-widest uppercase" style={{ transitionDelay: "0.5s" }}>
             <span>Role para descobrir</span>
             <div className="flex flex-col animate-scroll-hint">
               <span>↓</span>
@@ -131,7 +131,7 @@ export function Hero() {
         </div>
 
         {/* Promo Video — mobile only, abaixo do catálogo */}
-        <div className="order-[3.5] md:hidden w-full max-w-sm mx-auto reveal" style={{ transitionDelay: "0.45s" }}>
+        <div className="order-4 md:hidden w-full max-w-sm mx-auto reveal" style={{ transitionDelay: "0.45s" }}>
           <PromoVideo storageKey="promo-video-time" />
         </div>
       </motion.div>
