@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-import { type ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 type Variant = "fade-up" | "fade-left" | "fade-right" | "zoom-in" | "scale-in";
 
