@@ -2,7 +2,9 @@ import { CanPlaceholder } from "./CanPlaceholder";
 import { PromoVideo } from "./PromoVideo";
 import heroBg from "@/assets/hero-bg.png";
 
-export function Hero() {
+type HeroProps = { capaImage?: string };
+
+export function Hero({ capaImage }: HeroProps = {}) {
   return (
     <section
       id="hero"
@@ -97,7 +99,7 @@ export function Hero() {
               filter: "blur(60px)",
             }}
           />
-          <CanPlaceholder className="animate-can relative z-10" />
+          <CanPlaceholder className="animate-can relative z-10" image={capaImage} />
         </div>
 
         {/* Promo Video — mobile only, abaixo do catálogo */}

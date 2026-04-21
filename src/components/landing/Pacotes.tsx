@@ -40,36 +40,38 @@ const PageQuarterIcon = () => (
   </svg>
 );
 
-const formats: Format[] = [
-  {
-    name: "PÁGINA INTEIRA",
-    short: "FORMATO MASTER",
-    description: "24 meses de domínio absoluto da atenção do lojista.",
-    price: "R$ 15.000",
-    monthly: "R$ 625/mês",
-    highlight: true,
-    Icon: PageFullIcon,
-    image: pngPaginaInteira,
-  },
-  {
-    name: "MEIA PÁGINA",
-    short: "FORMATO TÁTICO",
-    description: "Destaque tático com alta recorrência visual no PDV.",
-    price: "R$ 8.000",
-    monthly: "R$ 333/mês",
-    Icon: PageHalfIcon,
-    image: pngMeiaPagina,
-  },
-  {
-    name: "1/4 DE PÁGINA",
-    short: "FORMATO ESSENCIAL",
-    description: "Garantia de marca lembrada em cada ciclo de abastecimento.",
-    price: "R$ 4.500",
-    monthly: "R$ 187/mês",
-    Icon: PageQuarterIcon,
-    image: pngUmQuarto,
-  },
-];
+function buildFormats(images?: { paginaInteira?: string; meiaPagina?: string; umQuarto?: string }): Format[] {
+  return [
+    {
+      name: "PÁGINA INTEIRA",
+      short: "FORMATO MASTER",
+      description: "24 meses de domínio absoluto da atenção do lojista.",
+      price: "R$ 15.000",
+      monthly: "R$ 625/mês",
+      highlight: true,
+      Icon: PageFullIcon,
+      image: images?.paginaInteira ?? pngPaginaInteira,
+    },
+    {
+      name: "MEIA PÁGINA",
+      short: "FORMATO TÁTICO",
+      description: "Destaque tático com alta recorrência visual no PDV.",
+      price: "R$ 8.000",
+      monthly: "R$ 333/mês",
+      Icon: PageHalfIcon,
+      image: images?.meiaPagina ?? pngMeiaPagina,
+    },
+    {
+      name: "1/4 DE PÁGINA",
+      short: "FORMATO ESSENCIAL",
+      description: "Garantia de marca lembrada em cada ciclo de abastecimento.",
+      price: "R$ 4.500",
+      monthly: "R$ 187/mês",
+      Icon: PageQuarterIcon,
+      image: images?.umQuarto ?? pngUmQuarto,
+    },
+  ];
+}
 
 function InlineFormatCard({ format }: { format: Format }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -196,7 +198,12 @@ function InlineFormatCard({ format }: { format: Format }) {
   );
 }
 
-export function Pacotes() {
+type PacotesProps = {
+  images?: { paginaInteira?: string; meiaPagina?: string; umQuarto?: string };
+};
+
+export function Pacotes({ images }: PacotesProps = {}) {
+  const formats = buildFormats(images);
   return (
     <section id="pacotes" className="relative py-24 px-8 bg-bg overflow-hidden">
       <video
