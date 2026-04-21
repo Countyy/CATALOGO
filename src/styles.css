@@ -60,7 +60,7 @@
   --bg3: oklch(0.27 0.08 263);         /* #0f2040 approx */
   --brand-red: oklch(0.58 0.22 27);    /* #E01E2B */
   --brand-blue: oklch(0.42 0.17 268);  /* #1C3F8F */
-  --brand-gold: oklch(0.87 0.18 95);   /* #FFD600 */
+  --brand-gold: oklch(0.82 0.07 85);   /* champagne sutil */
   --brand-muted: oklch(0.62 0.05 256); /* #7A90B0 */
 
   /* shadcn semantic */
@@ -178,10 +178,11 @@
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(28, 63, 143, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 63, 143, 0.09) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridPan 30s linear infinite;
+    linear-gradient(rgba(28, 63, 143, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 63, 143, 0.04) 1px, transparent 1px);
+  background-size: 90px 90px;
+  animation: gridPan 40s linear infinite;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
 }
 .animate-orb { animation: orbFloat 10s ease-in-out infinite; }
 .animate-can { animation: canFloat 5s ease-in-out infinite; }
