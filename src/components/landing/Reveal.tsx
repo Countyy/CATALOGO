@@ -89,15 +89,18 @@ export function RevealItem({
   variant = "fade-up",
   duration = 0.7,
   className,
+  style,
 }: {
   children: ReactNode;
   variant?: Variant;
   duration?: number;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <motion.div
       className={className}
+      style={style}
       variants={variants[variant]}
       transition={{ duration, ease: [0.22, 1, 0.36, 1] }}
     >
