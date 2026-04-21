@@ -3,7 +3,7 @@ type Format = {
   short: string;
   description: string;
   highlight?: boolean;
-  Icon: () => JSX.Element;
+  Icon: () => React.ReactElement;
 };
 
 const PageFullIcon = () => (
