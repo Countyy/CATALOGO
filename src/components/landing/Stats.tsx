@@ -48,7 +48,7 @@ function StatCard({ stat }: { stat: Stat }) {
   return (
     <div
       ref={ref}
-      className="group relative bg-bg p-10 hover:-translate-y-1 transition-transform"
+      className="group relative bg-bg p-10 hover:-translate-y-1 transition-transform h-full flex flex-col"
     >
       <div
         className={`font-display text-6xl md:text-7xl leading-none ${
@@ -59,7 +59,7 @@ function StatCard({ stat }: { stat: Stat }) {
         {formatNumber(Math.round(value))}
         {stat.suffix}
       </div>
-      <div className="text-white/90 text-xs uppercase tracking-[0.25em] mt-6 font-condensed">
+      <div className="text-white/90 text-xs uppercase tracking-[0.25em] mt-6 font-condensed min-h-[2.75rem]">
         {stat.label}
       </div>
       <div className="text-white/50 text-sm mt-2 font-light leading-relaxed">
