@@ -1,6 +1,9 @@
 import React from "react";
 import { Reveal, RevealItem } from "./Reveal";
 import pacotesBg from "@/assets/pacotes-bg.webm";
+import pngPaginaInteira from "@/assets/anuncio-pagina-inteira.png";
+import pngMeiaPagina from "@/assets/anuncio-meia-pagina.png";
+import pngUmQuarto from "@/assets/anuncio-um-quarto.png";
 
 type Format = {
   name: string;
