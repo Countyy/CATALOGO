@@ -61,7 +61,7 @@
   --brand-red: oklch(0.58 0.22 27);    /* #E01E2B */
   --brand-blue: oklch(0.42 0.17 268);  /* #1C3F8F */
   --brand-gold: oklch(0.82 0.07 85);   /* champagne sutil */
-  --brand-muted: oklch(0.62 0.05 256); /* #7A90B0 */
+  --brand-muted: oklch(0.82 0.04 256); /* clarified for readability */
 
   /* shadcn semantic */
   --background: var(--bg);
