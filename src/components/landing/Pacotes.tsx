@@ -1,5 +1,6 @@
 import React from "react";
 import { Reveal, RevealItem } from "./Reveal";
+import pacotesBg from "@/assets/pacotes-bg.webm";
 
 type Format = {
   name: string;
