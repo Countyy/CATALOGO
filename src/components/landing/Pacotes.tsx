@@ -1,4 +1,5 @@
 import React from "react";
+import { Reveal, RevealItem } from "./Reveal";
 
 type Format = {
   name: string;
