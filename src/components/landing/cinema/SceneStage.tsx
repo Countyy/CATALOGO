@@ -9,11 +9,11 @@ export function SceneStage({ scenes, activeScene }: Props) {
   const current = scenes[activeScene];
 
   return (
-    <div className="relative z-10 max-w-[1600px] w-full mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-2 md:gap-10 items-center">
+    <div className="relative z-10 max-w-[1600px] w-full mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-1 md:gap-10 items-center">
       {/* TEXT */}
       <div
         key={activeScene}
-        className="relative z-20 space-y-3 md:space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700 order-2 md:order-1 text-center md:text-left mt-6 md:mt-0"
+        className="relative z-20 space-y-2 md:space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700 order-2 md:order-1 text-center md:text-left mt-2 md:mt-0"
       >
         <div
           className="font-condensed font-bold tracking-[0.25em] md:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase"
