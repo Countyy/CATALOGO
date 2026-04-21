@@ -44,17 +44,17 @@ export function Hero() {
       <div className="relative z-10 max-w-[1400px] w-full mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT */}
         <div className="space-y-7">
-          <div className="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-gold/40 bg-brand-gold/5 text-brand-gold text-xs font-bold tracking-widest font-condensed uppercase">
+          <div className="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-white/80 text-xs font-bold tracking-widest font-condensed uppercase">
             ★ Proposta exclusiva
           </div>
 
           <h1 className="reveal font-display text-white leading-[0.85] text-6xl sm:text-7xl md:text-8xl lg:text-9xl" style={{ transitionDelay: "0.1s" }}>
             SUA MARCA<br />
             NO <span className="text-brand-red">CATÁLOGO</span><br />
-            QUE <span className="text-brand-gold">VENDE</span>
+            QUE VENDE
           </h1>
 
-          <p className="reveal text-brand-muted text-lg max-w-xl leading-relaxed" style={{ transitionDelay: "0.2s" }}>
+          <p className="reveal text-brand-muted text-lg max-w-xl leading-relaxed font-light" style={{ transitionDelay: "0.2s" }}>
             A Distribuidora São Roque conecta seus produtos a milhares de pontos de venda estratégicos. Garanta visibilidade máxima e destaque sua marca exatamente onde o varejista toma a decisão de abastecimento.
           </p>
 
