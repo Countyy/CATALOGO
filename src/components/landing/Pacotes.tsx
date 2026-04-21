@@ -1,6 +1,9 @@
 import React from "react";
 import { Reveal, RevealItem } from "./Reveal";
 import pacotesBg from "@/assets/pacotes-bg.webm";
+import pngPaginaInteira from "@/assets/anuncio-pagina-inteira.png";
+import pngMeiaPagina from "@/assets/anuncio-meia-pagina.png";
+import pngUmQuarto from "@/assets/anuncio-um-quarto.png";
 
 type Format = {
   name: string;
@@ -10,6 +13,7 @@ type Format = {
   monthly: string;
   highlight?: boolean;
   Icon: () => React.ReactElement;
+  image: string;
 };
 
 const PageFullIcon = () => (
@@ -45,6 +49,7 @@ const formats: Format[] = [
     monthly: "R$ 625/mês",
     highlight: true,
     Icon: PageFullIcon,
+    image: pngPaginaInteira,
   },
   {
     name: "MEIA PÁGINA",
@@ -53,6 +58,7 @@ const formats: Format[] = [
     price: "R$ 8.000",
     monthly: "R$ 333/mês",
     Icon: PageHalfIcon,
+    image: pngMeiaPagina,
   },
   {
     name: "1/4 DE PÁGINA",
@@ -61,6 +67,7 @@ const formats: Format[] = [
     price: "R$ 4.500",
     monthly: "R$ 187/mês",
     Icon: PageQuarterIcon,
+    image: pngUmQuarto,
   },
 ];
 
@@ -109,7 +116,7 @@ export function Pacotes() {
             <RevealItem
               key={f.name}
               variant="zoom-in"
-              className={`relative rounded-2xl p-10 md:p-12 backdrop-blur-xl border transition-all duration-300 hover:-translate-y-1 ${
+              className={`group relative rounded-2xl p-10 md:p-12 backdrop-blur-xl border transition-all duration-300 hover:-translate-y-1 ${
                 f.highlight
                   ? "bg-white/[0.08] border-brand-red/40 shadow-[0_8px_32px_rgba(224,30,43,0.2)]"
                   : "bg-white/[0.04] border-white/10 hover:bg-white/[0.07] hover:border-white/20"
@@ -120,8 +127,15 @@ export function Pacotes() {
                   : "0px -16px 24px 0px rgba(255,255,255,0.05) inset, 0 8px 32px rgba(0,0,0,0.2)",
               }}
             >
+              {/* Floating PNG that emerges on hover */}
+              <img
+                src={f.image}
+                alt={f.name}
+                className="pointer-events-none absolute left-1/2 -top-8 w-[85%] max-w-[320px] -translate-x-1/2 opacity-0 scale-75 translate-y-6 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100 group-hover:-translate-y-[55%] group-hover:rotate-[-4deg] z-20 drop-shadow-[0_25px_45px_rgba(0,0,0,0.6)]"
+              />
+
               {f.highlight && (
-                <div className="absolute top-6 right-6 font-display text-brand-red text-xs tracking-[0.3em]">
+                <div className="absolute top-6 right-6 font-display text-brand-red text-xs tracking-[0.3em] z-10">
                   RECOMENDADO
                 </div>
               )}
