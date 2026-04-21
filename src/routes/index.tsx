@@ -38,9 +38,9 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <WhyAdvertise />
         <CinemaScroll />
         <Ticker />
-        <WhyAdvertise />
         <Stats />
         <Pacotes />
         <Quote />
