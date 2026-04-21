@@ -19,7 +19,8 @@ export function Hero() {
     <motion.section
       ref={ref}
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-8 pt-[100px] pb-[60px]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-8 pt-[100px] pb-[60px]"
+      style={{ position: "relative" }}
     >
       <div
         className="absolute top-0 left-0 right-0 h-[3px]"
