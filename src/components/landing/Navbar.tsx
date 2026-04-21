@@ -13,7 +13,11 @@ export function Navbar() {
       ticking = false;
       const y = window.scrollY;
       // Começa a esmaecer após 80px e some completamente em 360px
-      const fade = Math.max(0, Math.min(1, 1 - (y - 80) / 280));
+      const linear = Math.max(0, Math.min(1, 1 - (y - 80) / 280));
+      // easeOutCubic sobre o progresso de "sumir" deixa o fade mais suave
+      const progress = 1 - linear;
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const fade = 1 - eased;
       // Evita re-renders se a mudança for imperceptível
       if (Math.abs(fade - lastOpacity) > 0.01 || fade === 0 || fade === 1) {
         lastOpacity = fade;
