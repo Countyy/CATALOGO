@@ -1,12 +1,17 @@
 import { useRef } from "react";
-import { scenes } from "./cinema/scenes";
+import { buildScenes, type SceneImages } from "./cinema/scenes";
 import { useSnapScroll } from "./cinema/useSnapScroll";
 import { SceneStage } from "./cinema/SceneStage";
 
 const sceneLabels = ["Página inteira", "Meia página", "Um quarto de página"];
 
-export function CinemaScroll() {
+type CinemaScrollProps = {
+  images?: SceneImages;
+};
+
+export function CinemaScroll({ images }: CinemaScrollProps = {}) {
   const sectionRef = useRef<HTMLElement>(null);
+  const scenes = buildScenes(images);
   const { activeScene, progress, scrollToScene } = useSnapScroll({
     sectionRef,
     steps: scenes.length,
@@ -33,7 +38,6 @@ export function CinemaScroll() {
           <SceneStage scenes={scenes} activeScene={activeScene} />
         </div>
 
-        {/* Scene dots — right side on desktop, bottom-center on mobile */}
         <div
           role="tablist"
           aria-label="Selecionar formato de anúncio"
@@ -64,7 +68,6 @@ export function CinemaScroll() {
           })}
         </div>
 
-        {/* Progress bar */}
         <div
           role="progressbar"
           aria-label="Progresso das cenas"

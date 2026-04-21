@@ -19,5 +19,5 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: () => <FornecedorPage data={defaultFornecedor} />,
+  component: () => <FornecedorPage data={defaultFornecedor} fullModules={false} />,
 });
