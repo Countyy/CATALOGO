@@ -55,7 +55,7 @@ export function Hero() {
           </h1>
 
           <p className="reveal text-brand-muted text-lg max-w-xl leading-relaxed" style={{ transitionDelay: "0.2s" }}>
-            A Distribuidora São Roque conecta a Baly a milhares de pontos de venda em todo o Nordeste — presença visual garantida onde a decisão de compra acontece.
+            A Distribuidora São Roque conecta seus produtos a milhares de pontos de venda estratégicos. Garanta visibilidade máxima e destaque sua marca exatamente onde o varejista toma a decisão de abastecimento.
           </p>
 
           <div className="reveal flex flex-wrap gap-4" style={{ transitionDelay: "0.3s" }}>
