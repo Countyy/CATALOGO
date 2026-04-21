@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import logoDsr from "@/assets/logo-dsr.png";
+import logoBaly from "@/assets/logo-baly.png";
 
 export function Navbar() {
   const navRef = useRef<HTMLElement>(null);
@@ -61,6 +62,9 @@ export function Navbar() {
       >
         <div className="flex items-center gap-3.5">
           <img src={logoDsr} alt="Distribuidora São Roque" className="h-28 md:h-32 object-contain" />
+        </div>
+        <div className="flex items-center gap-3.5">
+          <img src={logoBaly} alt="Baly" className="h-16 md:h-20 object-contain" />
         </div>
       </nav>
     </div>
