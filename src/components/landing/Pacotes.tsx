@@ -1,5 +1,6 @@
 import React from "react";
 import { Reveal, RevealItem } from "./Reveal";
+import pacotesBg from "@/assets/pacotes-bg.webm";
 
 type Format = {
   name: string;
@@ -65,8 +66,28 @@ const formats: Format[] = [
 
 export function Pacotes() {
   return (
-    <section id="pacotes" className="py-24 px-8 bg-bg">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="pacotes" className="relative py-24 px-8 bg-bg overflow-hidden">
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ opacity: 0.35 }}
+      >
+        <source src={pacotesBg} type="video/webm" />
+      </video>
+      {/* Dark overlay for legibility */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.9) 100%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 mb-16 items-end">
           <Reveal variant="fade-right">
             <h2 className="font-display text-white text-5xl sm:text-6xl md:text-7xl leading-[0.9]">
