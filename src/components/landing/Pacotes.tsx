@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Reveal, RevealItem } from "./Reveal";
 import pacotesBg from "@/assets/pacotes-bg.webm";
 import pngPaginaInteira from "@/assets/anuncio-pagina-inteira.png";
@@ -114,56 +114,6 @@ export function Pacotes() {
         <Reveal stagger staggerDelay={0.18} className="grid md:grid-cols-3 gap-6">
           {formats.map((f) => (
             <FormatCard key={f.name} format={f} />
-          ))}
-        </Reveal>
-
-              <div className={f.highlight ? "text-brand-red" : "text-white/40"}>
-                <f.Icon />
-              </div>
-
-              <div className="mt-8 font-display text-white/40 text-xs tracking-[0.3em]">
-                {f.short}
-              </div>
-
-              <h3 className="mt-2 font-display text-white text-3xl md:text-4xl tracking-wide">
-                {f.name}
-              </h3>
-
-              <p className="mt-6 text-white/60 text-sm md:text-base leading-relaxed font-light">
-                {f.description}
-              </p>
-
-              <div className="mt-10 pt-6 border-t border-white/10 space-y-4">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-display text-white/40 text-xs tracking-[0.25em]">
-                    INVESTIMENTO
-                  </span>
-                  <span
-                    className={`font-display text-3xl ${
-                      f.highlight ? "text-brand-red" : "text-white"
-                    }`}
-                  >
-                    {f.price}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between">
-                  <span className="font-display text-white/40 text-xs tracking-[0.25em]">
-                    EQUIVALE A
-                  </span>
-                  <span className="font-display text-base text-white/70">
-                    {f.monthly}
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-between pt-2 border-t border-white/5">
-                  <span className="font-display text-white/40 text-xs tracking-[0.25em]">
-                    EXPOSIÇÃO
-                  </span>
-                  <span className="font-display text-sm text-white/70 tracking-wider">
-                    24 MESES
-                  </span>
-                </div>
-              </div>
-            </RevealItem>
           ))}
         </Reveal>
 
