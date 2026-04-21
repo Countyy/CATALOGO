@@ -1,11 +1,12 @@
 const items = [
-  "Distribuidora estratégica na nossa área de atuação",
-  "+12.000 PDVs ativos",
+  "48.000 exemplares distribuídos",
+  "24 meses no campo",
+  "Catálogo na mão de cada vendedor",
   "Sua marca no ponto de decisão",
-  "Catálogo que move o varejo",
-  "48K exemplares por edição",
-  "Catálogo em 4 estados",
-  "Sua marca onde decide a compra",
+  "Distribuidora São Roque",
+  "3 formatos de anúncio disponíveis",
+  "Página inteira · Meia página · 1/4 de página",
+  "Visibilidade onde o varejista compra",
 ];
 
 export function Ticker() {
