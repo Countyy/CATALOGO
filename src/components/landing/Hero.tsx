@@ -63,7 +63,7 @@ export function Hero() {
         }}
       />
 
-      <motion.div style={{ filter, opacity }} className="relative z-10 max-w-[1400px] w-full mx-auto flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-12 items-center md:items-stretch">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-12 items-center md:items-stretch">
         {/* LEFT */}
         <div className="contents md:block md:space-y-7">
           <div className="reveal order-1 md:order-none inline-flex self-start items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-white/80 text-xs font-bold tracking-widest font-condensed uppercase">
@@ -119,7 +119,7 @@ export function Hero() {
         <div className="order-4 md:hidden w-full max-w-sm mx-auto reveal" style={{ transitionDelay: "0.45s" }}>
           <PromoVideo storageKey="promo-video-time" />
         </div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
