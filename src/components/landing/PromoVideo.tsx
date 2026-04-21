@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import promoVideoUrl from "@/assets/videos/catalogo-promo.mp4";
+import promoPosterUrl from "@/assets/videos/catalogo-promo-poster.jpg";
 
 type Props = {
   className?: string;
@@ -66,8 +68,8 @@ export function PromoVideo({ className = "", storageKey = "promo-video-time" }: 
     >
       <video
         ref={videoRef}
-        src="/videos/catalogo-promo.mp4"
-        poster="/videos/catalogo-promo-poster.jpg"
+        src={promoVideoUrl}
+        poster={promoPosterUrl}
         muted
         playsInline
         loop={false}
