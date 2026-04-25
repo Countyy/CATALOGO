@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
+import { useSearch } from "@tanstack/react-router";
 import { fornecedores, defaultFornecedor, type FornecedorData } from "@/constants/fornecedores";
 
 export function useFornecedor() {
   const [data, setData] = useState<FornecedorData>(defaultFornecedor);
   const [isDefault, setIsDefault] = useState<boolean>(true);
+  
+  // Pegamos o search params de qualquer rota, sem estourar erro se não existir
+  const search = useSearch({ strict: false }) as { fornecedor?: string };
 
   useEffect(() => {
-    // Tenta pegar da URL primeiro (ex: ?fornecedor=bombril)
-    const urlParams = new URLSearchParams(window.location.search);
-    const paramSlug = urlParams.get("fornecedor")?.toLowerCase();
+    // Tenta pegar da URL via TanStack Router
+    const paramSlug = search?.fornecedor?.toLowerCase();
 
     // Depois tenta pelo subdomínio (ex: "baly.saoroque.com" -> "baly")
     const hostname = window.location.hostname;
