@@ -1,5 +1,5 @@
 services:
-  catalogodsr:
+  catalogodsr_v5:
     build:
       context: .
       dockerfile: Dockerfile
